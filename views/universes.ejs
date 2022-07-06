@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Universes</title>
+</head>
+<body>
+    <h1>
+        LISTE DES UNIVERS :
+        </h1>
+    <ul>
+        <% for (var i = 1; i < universes.length; i++) { %>
+        <li><a href="universes?unvid=<%=universes[i].id%>&unvname=<%=universes[i].name%>"><%=universes[i].name %></a></li>
+        <% } %>
+    </ul>
+</body>
+</html>  
+

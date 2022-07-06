@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title>Universe Details</title>
+<%var selected_objects = []%>
+<%function select(obj){%>
+<%selected_objects.push(obj)%>
+<%for (var i = 0; i < selected_objects.length; i++){%>
+<%console.log(selected_objects[i])%>
+<%}%>
+<%}%>
+<script>
+var selected_objects_web = []
+var selected_objects_web_show = []
+
+function selectOnclick(name,path){
+var pair=[name,path]
+selected_objects_web.push(pair)
+selected_objects_web_show.push(name)
+document.getElementById("sel_objs").innerHTML=selected_objects_web_show
+
+}
+</script>
+</head>
+<body>
+    <h1>
+    Universe : <%=universeName%>
+    </h1>
+    <%for (var i = 0; i < universeDetails.length; i++) {%>
+         <h2><%=universeDetails[i].name%></h2>        
+         <%for (var j = 0; j <  universeDetails[i].item.length; j++) {%>
+              <h3>Attribute name : <%=universeDetails[i].item[j].name%></h3> 
+              <h3>Attribute type : <%=universeDetails[i].item[j]["$"].type%> </h3>
+              <button onclick = "selectOnclick('<%=universeDetails[i].item[j].name%>','<%=universeDetails[i].item[j].name%>')">Select</button>
+              
+              
+              <br>
+              <br>
+
+         <% } %>
+                 
+    <% } %>
+<script>
+var href = "/selectedObjects?"
+for (var i = 0; i<selected_objects_web.length; i++){
+href = href + "&" + "name" + i + "=" + selected_objects_web[i][0] +
+              "&" + "path"+ i +"="+ selected_objects_web[i][1]
+console.log(href)
+}
+</script>
+
+
+<p>Selected Objects are</p>
+
+<p id="sel_objs"></p>
+<h1><a href="getUserCoordinates" >CONFIRM</a></h1>
+
+
+ </body>
+ </html>
