@@ -217,7 +217,6 @@ async function get_data(query_id) {
     })
 }
 
-
 function getSelectedObjects(req, res) {
     res.header("Access-Control-Allow-Origin", "*")
     res.json(json_data)
