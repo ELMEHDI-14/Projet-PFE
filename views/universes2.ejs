@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Universes</title>
+    <script>
+var universes_ids= []
+
+function selectOnclick(unv_id){
+universes_ids.push(unv_id)
+}
+</script>
+</head>
+<body>
+    <h1>
+        LISTE DES UNIVERS :
+        </h1>
+    <ul>
+        <% for (var i = 1; i < universes.length; i++) { %>
+         <li><button "selectOnclick('<%=universes[i]%>')"><%=universes[i].name %></button></li>
+        
+        <% } %>
+    </ul>
+    <div>
+   <a href="universes?unvs=<%=universes[i].id%>&unvname=<%=universes[i].name%>">confirm</a>
+    </div>
+</body>
+</html>  
+

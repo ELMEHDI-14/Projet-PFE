@@ -45,6 +45,7 @@ function getAccueil(req, res) {
     res.sendfile("Accueil.html");
 }
 
+
 // Gets User form coodrdinates + Calling GetAllUnv.
 function getFormCoordinates(req, res) {
 
